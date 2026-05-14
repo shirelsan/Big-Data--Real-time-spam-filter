@@ -43,7 +43,10 @@
  1. חלון 1 (הפעלת שרת Zookeeper):
   ```DOS
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
- 2. ג
 
+ 2. חלון 2 (הפעלת שרת Kafka Broker):
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+3.  חלון 3 (יצירת נושא ההזרמה עם 3 מחיצות):
+.\bin\windows\kafka-topics.bat --create --topic email-stream --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1
 
-
+ (יש לוודא קבלת פלט הצלחה: Created topic email-stream.)
