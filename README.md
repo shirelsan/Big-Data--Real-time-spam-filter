@@ -20,20 +20,30 @@
 
  פלט צפוי: יצירת קובץ אחיד בשם emails_master.csv המכיל בדיוק 12,949 רשומות ו-60 עמודות (מזהה ייחודי, 57 תכונות, תגית ומקור).
  
- 2. **אימון שלושת המסווגים (Offline Training):**
-   ```bash
-   python train_models.py
+  2. **אימון שלושת המסווגים (Offline Training):**
+    ```bash
+    python train_models.py
 
 פלט צפוי: טעינת הרשומות המסומנות מתוך קובץ המאסטר, ביצוע פיצול מרובד (Stratified Split) ל-70% אימון ו-30% בדיקה, נרמול התכונות בעזרת StandardScaler, ושמירת ארבעה קבצי אובייקט מחושבים בפורמט Pickle:
 
- 2. **אימון שלושת המסווגים (Offline Training):**
-   ```bash
-   python train_models.py
+* אובייקט המנרמל: scaler.pkl
 
-פלט צפוי: טעינת הרשומות המסומנות מתוך קובץ המאסטר, ביצוע פיצול מרובד (Stratified Split) ל-70% אימון ו-30% בדיקה, נרמול התכונות בעזרת StandardScaler, ושמירת ארבעה קבצי אובייקט מחושבים בפורמט Pickle:
+* ממודל רגרסיה לוגיסטית: model_logistic.pkl
+
+* מודל מכונות וקטורים תומכים: model_svm.pkl
+
+* מודל יער אקראי: model_rf.pkl
+  
+בנוסף, הסקריפט מדפיס למסך את דוחות הסיווג (Classification Reports) ואת טבלת מדדי הביצועים להשוואה.
+
+  3. **הפעלת תשתית זרימת הנתונים (Apache Kafka):**
+      
+ בסביבת Windows, יש לפתוח שלושה חלונות שורת פקודה (CMD) נפרדים, לנווט בכולם לתיקיית ההתקנה של Kafka (לדוגמה C:\kafka), ולהריץ את הפקודות הבאות לפי 
+ הסדר:
+ 1. חלון 1 (הפעלת שרת Zookeeper):
+  ```DOS
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+ 2. ג
 
 
 
-
-
- 
