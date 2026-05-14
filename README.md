@@ -53,3 +53,16 @@
 `.\bin\windows\kafka-topics.bat --create --topic email-stream --bootstrap-server localhost:9092 --partitions 3 --replication-factor 1`
 
  (יש לוודא קבלת פלט הצלחה: Created topic email-stream.)
+
+4. **הזרמה וסיווג בזמן אמת (Online Real-Time Processing):**
+
+יש לפתוח שני מסופי פייתון במקביל בתיקיית הפרויקט (למשל באמצעות פיצול מסופים ב-VS Code):
+
+*במסוף הראשון, מפעילים את הצרכן (Consumer) המאזין בזמן אמת:
+`python consumer.py`
+
+*במסוף השני, מפעילים את היצרן (Producer) המשדר את הודעות הדוא"ל:
+`python producer.py`
+היצרן קורא את emails_master.csv שורה אחר שורה, מנתב כל הודעה למחיצה (Partition) המתאימה לפי המקור (0 ל-UCI, 1 ל-Berkeley, 2 לבלתי מסומנות), ומשדר בהשהיה של 50 מילישניות בין הודעה להודעה.
+
+**סיום ההרצה:** לאחר שהיצרן מסיים לשדר את כל 12,949 ההודעות וכותב את הלוג console.producer.txt, יש לגשת לחלון הצרכן וללחוץ על השילוב Ctrl + C. לחיצה זו תסיים את תהליך ההאזנה בצורה בטוחה, תסגור את קבצי הפלט (console.consumer.txt, alerts.txt, consumer_log.csv) ותדפיס למסך את סיכום סטטיסטיקות זמני התגובה.
