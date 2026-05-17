@@ -2,10 +2,10 @@
 
 ## 1. פרטי הקבוצה:
 * **ID1:** 322328824 **Student Name:** Shirel Bodenheimer 
-* **ID2:** [תעודת זהות 2] **Student Name:** Tehillah Ben David
+* **ID2:** 314692195 **Student Name:** Tehillah Ben David
 * **team:** team-spam-fighters
 * **date:** 14/05/2026
-* **Git Repository:** 
+* **Git Repository:** https://github.com/shirelsan/Big-Data--Real-time-spam-filter.git
 
 ## 2. הוראות הפעלה ושחזור התרגיל
 מערכת זו מממשת פייפליין מלא לזיהוי ספאם בזמן אמת באמצעות Apache Kafka ושלושה מסווגים הפועלים במקביל תחת מנגנון הצבעת רוב (Majority Vote).
